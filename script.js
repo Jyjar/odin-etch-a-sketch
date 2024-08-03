@@ -1,7 +1,7 @@
 const chooseGridSize = document.querySelector("#chooseGridSize");
 chooseGridSize.addEventListener('click', (event) => {
     let size = parseInt(prompt("Enter Grid Size (Max: 100)"));
-    if (size == Nan || size < 0) {
+    if (Number.isNaN(size) || size < 0) {
         console.log(size)
         alert("Invalid input, try again");
     }
@@ -10,6 +10,7 @@ chooseGridSize.addEventListener('click', (event) => {
         size = 100;
     }
     container.remove();
+    console.log(size);
     createGrid(size);
 })
 
